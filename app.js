@@ -11,7 +11,7 @@ $(document).ready(function () {
         e.preventDefault();
         const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
         console.log('Endereço da imagem', enderecoDaNovaImagem);
-        const novoItem = $(`<li> </li>`);
+        const novoItem = $(`<li style="display:none"> </li>`);
 
         $(`        
             <img src="${enderecoDaNovaImagem}" alt="Pintura de um gato">
@@ -21,6 +21,7 @@ $(document).ready(function () {
         
         `).appendTo(novoItem)
         $(novoItem).appendTo('ul');
+        $(novoItem).fadeIn(5000);
         $('#endereco-imagem-nova').val('');
     })
 })
