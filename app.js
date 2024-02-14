@@ -8,8 +8,19 @@ $(document).ready(function () {
     })
 
     $('form').on('submit', (e) => {
-        console.log('Passei aqui');
         e.preventDefault();
+        const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
+        console.log('Endereço da imagem', enderecoDaNovaImagem);
+        const novoItem = $(`<li> </li>`);
 
+        $(`        
+            <img src="${enderecoDaNovaImagem}" alt="Pintura de um gato">
+            <div class="overlay-imagem-link">
+                <a href="${enderecoDaNovaImagem}">Ver imagens em tamanho real</a>
+            </div>
+        
+        `).appendTo(novoItem)
+        $(novoItem).appendTo('ul');
+        $('#endereco-imagem-nova').val('');
     })
 })
